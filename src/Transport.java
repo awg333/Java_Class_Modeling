@@ -1,5 +1,4 @@
 import java.util.UUID;
-enum State{Default, Driving, Parking};
 
 public abstract class Transport {
 
