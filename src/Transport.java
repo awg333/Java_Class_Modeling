@@ -40,13 +40,17 @@ public abstract class Transport {
             System.out.println("# 주유량 "+ l);
 
         refuel += l;
-        //System.out.println("주유량 = " + refuel);
     }
 
     // 속도변경
     public void changeSpeed(int value){
         if(checkRefuel()){
-            setSpeed(speed + value);
+            if(speed + value < 0 ){
+                setSpeed(0);
+            }else{
+                setSpeed(speed + value);
+            }
+
         }
 
     }

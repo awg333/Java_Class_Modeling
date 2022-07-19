@@ -10,22 +10,23 @@ public class Taxi extends Transport{
         this.defaultDistance = 1;
         this.distanceFare = 1000;
 
-
         System.out.println("### " + getNum() + "번 택시 운행 시작 ###");
     }
+
     public void takePassenger(int n){
         System.out.println("# 숭객 " + n);
         this.destination = "아무데나 가주세요";
         this.destDistance = 10;
         boarding(n);
     }
-    public void takePassenger(int n, String destination, int destDistance){
 
+    public void takePassenger(int n, String destination, int destDistance){
         System.out.println("# 숭객 " + n + ", 목적지 = " + destination + ", 목적지까지 거리 = " + destDistance + "km");
         this.destination = destination;
         this.destDistance = destDistance;
         boarding(n);
     }
+
     @Override
     public void print() {
         System.out.println("# 택시 정보 출력");
@@ -63,7 +64,6 @@ public class Taxi extends Transport{
 
     @Override
     public void boarding(int n) {
-
         super.boarding(n);
         if(getCurState() == State.Driving){
             System.out.println("\t승객이 타고있습니다.");
